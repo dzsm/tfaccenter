@@ -1,0 +1,14 @@
+<div style="margin: 10px;">
+    <textarea type="text" [(ngModel)]="trainingText" style="width: 100%;"></textarea>
+    <button [disabled]="isWorking" (click)="train(trainingText)">TRAIN</button>
+    <label *ngIf="isWorking">Working...</label>
+</div>
+<div style="margin: 10px;">
+    <textarea type="text" [(ngModel)]="predictingText" style="width: 100%;"></textarea>
+    <button [disabled]="isWorking" (click)="predict(predictingText)">PREDICT</button>
+</div>
+<div style="margin: 10px; background-color: black; color: white; min-height: 200px; overflow-y: auto;">
+    <p>
+        {{prediction}}
+    </p>
+</div>
